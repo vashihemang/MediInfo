@@ -1,3 +1,4 @@
+
 # 💊 MediInfo
 
 MediInfo is a medicine information platform that provides detailed information about medicines, including their uses, composition, dosage, side effects, precautions, indications, manufacturers, and other important details. The project is designed to make medicine-related information easy to search, understand, and access in one place.
@@ -7,7 +8,7 @@ MediInfo is a medicine information platform that provides detailed information a
 
 The project uses **Flask**, **FastAPI**, and a **Machine Learning model** to process user input and provide relevant medicine-related information.
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/3b2d6a1e-11bb-47e3-8140-20de3243f9d2" />
+<img width="2814" height="1536" alt="mediInfo" src="https://github.com/user-attachments/assets/24f68151-2f0f-4b57-9642-06f0768fb8a7" />
 
 ## 🚀 Features
 
