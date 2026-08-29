@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medi-Scan Chat</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+            <Medi-scan>Medi-scan</Medi-scan>
+        </div>
+
+
+
+        <button class="new-chat" onclick="newChat()">
+            + New Chat
+        </button>
+
+        <div class="history-title">
+            Recent Chats
+        </div>
+
+        <div class="chat-history" id="history">
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <div class="heading">
+            Hello, User
+        </div>
+
+        <div class="chat-display" id="chatDisplay"></div>
+
+        <div class="input-area">
+
+            <div id="previewContainer"
+                style="display: none; position: absolute; bottom: calc(100% + 10px); left: 15px; width: 75px; height: 75px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background: #f0f0f0;">
+                <img id="imagePreview" src="" alt="Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                <button type="button" onclick="clearImage(event)"
+                    style="position: absolute; top: 4px; right: 4px; background: rgba(0,0,0,0.6); color: white; border: none; border-radius: 50%; width: 18px; height: 18px; font-size: 11px; cursor: pointer; display: flex; align-items: center; justify-content: center; line-height: 1;">&times;</button>
+            </div>
+
+            <input type="file" id="imageInput" accept="image/*" hidden onchange="previewImage(event)">
+
+            <button onclick="document.getElementById('imageInput').click()"
+                style="background: none; border: none; cursor: pointer; font-size: 20px; color: #666; margin-right: 10px; margin-left: 10px;">
+                <i class="fa-solid fa-paperclip"></i>
+            </button>
+
+            <select class="model-select" id="modelSelect">
+                <option value="M-Photo">M-Photo</option>
+                <option value="M-Report">M-Report</option>
+            </select>
+
+            <input type="text" class="input-box" id="messageInput" placeholder="Ask Gemini...">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+            <button class="send-btn" onclick="sendMessage()">
+                ➤
+            </button>
+
+        </div>
+
+    </div>
+    <div id="renameModal" class="rename-modal">
+
+        <div class="rename-box">
+
+            <h3>
+                Rename Chat
+            </h3>
+
+            <input id="renameInput" type="text" placeholder="Enter new name">
+
+            <div class="rename-buttons">
+
+                <button id="saveRename">
+                    Save
+                </button>
+
+                <button id="cancelRename">
+                    Cancel
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
